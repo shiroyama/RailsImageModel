@@ -11,13 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140304120014) do
+ActiveRecord::Schema.define(version: 20140304133820) do
 
   create_table "albums", force: true do |t|
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "photos", force: true do |t|
+    t.string   "title"
+    t.integer  "album_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "photo_file_file_name"
+    t.string   "photo_file_content_type"
+    t.integer  "photo_file_file_size"
+    t.datetime "photo_file_updated_at"
+  end
+
+  add_index "photos", ["album_id"], name: "index_photos_on_album_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"

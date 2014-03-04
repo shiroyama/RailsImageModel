@@ -15,6 +15,7 @@ class AlbumsController < ApplicationController
   # GET /albums/new
   def new
     @album = Album.new
+    @photo = @album.photos.build
   end
 
   # GET /albums/1/edit
@@ -69,6 +70,6 @@ class AlbumsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def album_params
-      params.require(:album).permit(:title)
+      params.require(:album).permit(:title, photos_attributes: [:title, :photo_file])
     end
 end
