@@ -45,3 +45,5 @@ gem 'unicorn'
 # gem 'debugger', group: [:development, :test]
 
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+
+gem 'protected_attributes'
