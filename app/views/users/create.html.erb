@@ -1,2 +1,9 @@
 <h1>Users#create</h1>
 <p>Find me in app/views/users/create.html.erb</p>
+
+<p>Upload OK!</p>
+
+<p><%= @user.name %>
+<p><%= image_tag @user.avatar.url %>
+<p><%= image_tag @user.avatar.url(:medium) %>
+<p><%= image_tag @user.avatar.url(:thumb) %>

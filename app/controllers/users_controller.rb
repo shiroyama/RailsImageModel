@@ -1,4 +1,17 @@
 class UsersController < ApplicationController
-  def create
+  def index
+      @user = User.new
   end
+  def create
+      @user = User.create( user_params )
+  end
+end
+
+private
+
+# Use strong_parameters for attribute whitelisting
+# Be sure to update your create() and update() controller methods.
+
+def user_params
+  params.require(:user).permit(:name, :avatar)
 end
