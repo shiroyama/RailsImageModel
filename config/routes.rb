@@ -4,6 +4,8 @@ ImageModel::Application.routes.draw do
 
   match '/user_create', to: 'users#create', via: 'post'
 
+  get 'users/show/:id' => 'users#show', as: :photo_list
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
