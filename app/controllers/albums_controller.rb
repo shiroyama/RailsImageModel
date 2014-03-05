@@ -27,6 +27,11 @@ class AlbumsController < ApplicationController
   def create
     @album = Album.new(album_params)
 
+    not_blank_photos = @album.photos.select do |photo|
+        ! photo.title.blank?
+    end
+    @album.photos = not_blank_photos
+
     respond_to do |format|
       if @album.save
         format.html { redirect_to @album, notice: 'Album was successfully created.' }
