@@ -1,4 +1,7 @@
 ImageModel::Application.routes.draw do
+  get "albums/show_multiple"
+  get "albums/create_multiple"
+  get "albums/new_multiple"
   resources :albums
 
   get "users/index"
