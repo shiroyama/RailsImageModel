@@ -1,5 +1,5 @@
 ImageModel::Application.routes.draw do
-  get "albums/show_multiple"
+  get 'albums/show_multiple/:id' => 'albums#show_multiple', as: :album_photos
   get "albums/create_multiple"
   get "albums/new_multiple"
   resources :albums

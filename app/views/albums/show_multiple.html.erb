@@ -1,2 +1,9 @@
 <h1>Albums#show_multiple</h1>
 <p>Find me in app/views/albums/show_multiple.html.erb</p>
+
+<% @photos.each do |photo|%>
+<!--<p><%= image_tag photo.photo_file.url %>-->
+<p><%= image_tag photo.photo_file.url(:medium) %>
+<p><%= image_tag photo.photo_file.url(:thumb) %>
+<hr/>
+<% end %>

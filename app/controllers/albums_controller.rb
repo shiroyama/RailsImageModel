@@ -62,6 +62,21 @@ class AlbumsController < ApplicationController
     end
   end
 
+  # GET /albums/new_multiple
+  def new_multiple
+    @album = Album.new
+    5.times do
+        @album.photos.build
+    end
+  end
+
+  # GET /albums/show_multiple
+  def show_multiple
+      @album = Album.find(params[:id])
+      @photos = @album.photos
+      p @photos
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_album

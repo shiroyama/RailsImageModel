@@ -1,2 +1,13 @@
 <h1>Albums#new_multiple</h1>
 <p>Find me in app/views/albums/new_multiple.html.erb</p>
+
+<%= form_for @album do |f1| %>
+    <p>ALBUM TITLE: <%= f1.text_field :title %>
+    <%= f1.fields_for :photos do |f2| %>
+        <p>PHOTO TITLE: <%= f2.text_field :title %>
+        <p><%= f2.file_field :photo_file %></p>
+    <% end %>
+    <p><%= f1.submit %></p>
+<% end %>
+
+<%= link_to 'Back', albums_path %>
